@@ -1,10 +1,32 @@
 class Soltuion_wk2_1{
     public static void main(String[] args){
         int x = -1534236469;
-        System.out.println(reverseIntegerString(x));
 
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println(x*10 > (double)Integer.MAX_VALUE);
+
+                // Create two threads:
+        Thread thread1 = new Thread() {
+            public void run() {
+                System.out.println(reverseIntegerMath(x));
+            }
+        };
+
+        Thread thread2 = new Thread() {
+            public void run() {
+                System.out.println(reverseIntegerString(x));
+            }
+        };
+
+                // Start the downloads.
+        thread1.start();
+        thread2.start();
+        try{
+                    // Wait for them both to finish
+        thread1.join();
+        thread2.join();
+        }
+        catch(Exception e){
+            System.out.print(e.getMessage());
+        }
 
 
 
