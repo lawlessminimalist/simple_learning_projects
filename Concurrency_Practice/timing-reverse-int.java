@@ -1,24 +1,36 @@
 class Soltuion_wk2_1{
+
+
+    public static long startTime = System.currentTimeMillis();
+
+    public static long endTimeStringMethod = 0;
+    public static long endTimeMathMethod = 0;
     public static void main(String[] args){
         int x = -1534236469;
 
-
-                // Create two threads:
-        Thread thread1 = new Thread() {
+     // Create two threads:
+        Thread thread1 = new Thread(){
             public void run() {
-                System.out.println(reverseIntegerMath(x));
-            }
+                for(int x = 0;x<9999999*10;x++){
+                    reverseIntegerMath(x);
+                }
+                endTimeMathMethod = System.currentTimeMillis();
+
         };
-
-        Thread thread2 = new Thread() {
+    };
+        Thread thread2 = new Thread(){
             public void run() {
-                System.out.println(reverseIntegerString(x));
+                for(int x = 0;x<9999999*10;x++){
+                    reverseIntegerString(x);
+                }
+                endTimeStringMethod = System.currentTimeMillis();
             }
         };
 
                 // Start the downloads.
         thread1.start();
         thread2.start();
+
         try{
                     // Wait for them both to finish
         thread1.join();
@@ -27,6 +39,9 @@ class Soltuion_wk2_1{
         catch(Exception e){
             System.out.print(e.getMessage());
         }
+        System.out.println("Total execution time for string method: " + (double)(endTimeStringMethod - startTime));
+        System.out.println("Total execution time for math method: " + (double)(endTimeMathMethod - startTime));
+
 
 
 
