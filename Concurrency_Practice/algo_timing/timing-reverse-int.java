@@ -1,3 +1,4 @@
+package algo_timing;
 class Soltuion_wk2_1{
 
 
@@ -6,7 +7,6 @@ class Soltuion_wk2_1{
     public static long endTimeStringMethod = 0;
     public static long endTimeMathMethod = 0;
     public static void main(String[] args){
-        int x = -1534236469;
 
      // Create two threads:
         Thread thread1 = new Thread(){
