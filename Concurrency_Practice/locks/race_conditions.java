@@ -1,4 +1,4 @@
-package locks;
+package Concurrency_Practice.locks;
 import java.util.concurrent.locks.*;
 
 
