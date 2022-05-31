@@ -1,4 +1,4 @@
-class Solution {
+class Solution_Solved {
     public static int[] searchRange(int[] nums, int target) {
         //use binary searcht to locate the first instance of a target element from an array
         //params: 
